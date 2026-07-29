@@ -23,7 +23,7 @@ function App() {
     setResult(null);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/predict', {
+      const response = await axios.post('https://fake-job-detector-api-863b.onrender.com', {
         text: text,
         has_logo: hasLogo
       });
