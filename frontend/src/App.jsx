@@ -23,14 +23,14 @@ function App() {
     setResult(null);
 
     try {
-      const response = await axios.post('https://fake-job-detector-api-863b.onrender.com', {
+      const response = await axios.post('https://fake-job-detector-api-863b.onrender.com/predict', {
         text: text,
         has_logo: hasLogo
       });
       setResult(response.data);
     } catch (err) {
       console.error(err);
-      setError('Could not connect to Python FastAPI server. Ensure backend is running at http://127.0.0.1:8000.');
+      setError('Could not connect to Python FastAPI server. Please wait a few seconds as the backend wakes up.');
     } finally {
       setLoading(false);
     }
